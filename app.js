@@ -2,9 +2,12 @@ console.log("Hallo");
 const wordEL = document.querySelector(".word");
 const oldWordsEl = document.querySelector(".old-words");
 
+const wordEL2 = document.getElementById("word2");
+
 // Wortliste
 let words = [];
 let currentWord = "";
+let currentWord2 = "";
 let previusWords = [];
 
 fetch("words.txt")
@@ -20,9 +23,11 @@ fetch("words.txt")
 function onClick() {
   if (currentWord) {
     previusWords.push(currentWord);
+    previusWords.push(currentWord2);
     if (previusWords.length > 10) {
       console.log("!");
-      previusWords.shift();
+      // previusWords.shift();
+      previusWords = previusWords.slice(2);
     }
     oldWordsEl.innerHTML = previusWords.join(", ");
     console.log(currentWord, previusWords);
@@ -30,6 +35,8 @@ function onClick() {
   currentWord = getRandomWord();
   wordEL.innerHTML = currentWord;
   // console.log(currentWord);
+  currentWord2 = getRandomWord();
+  wordEL2.innerHTML = currentWord2;
 }
 
 function getRandomNumber(maxNumber) {

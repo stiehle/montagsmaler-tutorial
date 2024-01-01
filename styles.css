@@ -19,8 +19,16 @@ body {
 
 .word {
   margin: 0 0 64px 0;
-
   font-size: 40px;
+  color:limegreen
+  
+}
+
+#word2 {
+  margin: 0 0 64px 0;
+  font-size: 30px;
+  color: aquamarine;
+
 }
 
 button {
